@@ -26,7 +26,7 @@ kind: Ingress
 metadata:
   name: yopass-ingress
   annotations:
-        alb.ingress.kubernetes.io/certificate-arn: #Your domain certificate arn from ACM
+        alb.ingress.kubernetes.io/certificate-arn: #Your domain certificate arn from ACM for e.g. arn:aws:acm:me-central-1:886436945315:certificate/e424090c-de1f-40e1-8883-5c60b1e487c6
 spec:
   ingressClassName: alb 
   rules:
