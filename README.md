@@ -7,3 +7,5 @@ Instructions to deploy YoPass on AWS EKS Auto Mode
   6. Run the command ` kubectl -n yopass -f ingress-all.yml `
   7. Point the domain name in Route 53 to the ALB.
   8. Access the app using `https://your_domain_name`.
+
+**Helm**
