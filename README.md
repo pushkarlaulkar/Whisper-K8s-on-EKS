@@ -5,7 +5,7 @@ Instructions to deploy **YoPass** on AWS EKS Auto Mode
 
      ` kubectl -n yopass apply -f yopass-dep.yml -f yopass-svc.yml -f memcached-dep.yml -f memcached-svc.yml `
   4. Deploy `Ingress`, `Ingress Class` & `Ingress Params` which will create an ALB listening on port 443. We will need to provide the arn of the certificate in the `Ingress` object. The certificate for the domain name needs to be created in ACM and DNS validation or Email validation needs to be done prior to creating these resources.
-  5. Run the command ` kubectl -n yopass -f ingress-all.yml `
+  5. Run the command ` kubectl -n yopass apply -f ingress-all.yml `
   6. Run `kubectl -n yopass get ingress` to retrieve the ALB DNS.
   7. Point the domain name in Route 53 to the ALB as an A (alias) record.
   8. Access the app using `https://your_domain_name`.
