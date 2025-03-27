@@ -25,6 +25,7 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: yopass-ingress
+  namespace: yopass
   annotations:
         alb.ingress.kubernetes.io/certificate-arn: "{{ .Values.certificate_arn }}" 
 spec:
