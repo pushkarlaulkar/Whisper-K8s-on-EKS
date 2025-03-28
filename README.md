@@ -43,4 +43,8 @@ To install this app using ArgoCD, perform below steps
      ```
   4. Run ` kubectl -n argocd get ingress ` to retrieve the ALB DNS. Point the domain name in Route 53 to the ALB as an A (alias) record.
   5. Access ArgoCD using ` https://argocd_domain_name `.
-  6. To get the initial admin user password run the command ` kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 --decode `.
+  6. To get the initial admin user password run the command
+
+     ```
+     kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 --decode
+     ```
