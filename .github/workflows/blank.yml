@@ -1,0 +1,25 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+      - name: Install yamllint
+        run: pip3 install yamllint
+      - name: Lint YAML files
+        run: yamllint .
+      - name: Validate Kubernetes manifests
+        uses: instrumenta/kubeval-action@v1
+        with:
+          files: "*.yml"
